@@ -1,0 +1,88 @@
+IMGSRC
+
+====================================================
+
+Tiny little scripts that loads a local HTML file or a remote
+http web site page, and extracts the external (to the page's
+domain) domains from which it is loading images.
+
+Basically extracts all <IMG> tags and selects and sorts
+external domains used to load images.
+
+Accepts two parameters:
+
+1. The first mandatory parameter is either the path to a local
+file containing HTML to be parsed, or a URL to a web page to
+be scanned.
+
+2. The second optional parameter is --bare, which prevents the
+script from outputting any extra info or interactivity so you
+can use this prog in your own scripts.
+
+
+Sample output:
+
+====================================================
+$ ./imgsrc_linux http://www.shutterstock.com/
+----------------------------------------------------
+Copyright (c) 2008 Gabriel Medina/Rha7.Com.
+
+Image Sources
+=============
+69.90.174.246
+69.90.174.248
+69.90.174.251
+69.90.174.253
+www.shutterstock.com
+=============
+
+Press [ENTER] key to leave.
+====================================================
+
+
+====================================================
+$ ./imgsrc_linux ./local_file_shutterstock.html
+----------------------------------------------------
+Copyright (c) 2008 Gabriel Medina/Rha7.Com.
+
+Image Sources
+=============
+69.90.174.246
+69.90.174.248
+69.90.174.251
+69.90.174.253
+www.shutterstock.com
+=============
+
+Press [ENTER] key to leave.
+====================================================
+
+
+
+====================================================
+$ ./imgsrc_linux http://www.shutterstock.com/ --bare
+----------------------------------------------------
+69.90.174.246
+69.90.174.248
+69.90.174.251
+69.90.174.253
+www.shutterstock.com
+====================================================
+
+As you can see the --bare makes the script not to ask
+for ENTER to continue, also doesn't display any extra
+formatting or information, so it can be used in
+scripts. Also note the use of the script with local
+files and http web sites.
+
+Hope this is useful for someone out there, I am
+currently using it to detect and auto add to a SQUID
+server white list, the hosts from which an already
+authorized page is loading images.
+
+
+Copyright (c) 2008 Gabriel Medina released under the LGPL license
+see LICENSE file for details.
+
+
+
