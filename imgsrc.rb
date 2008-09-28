@@ -6,6 +6,7 @@ require 'pp'
 if ARGV.size < 1 or ARGV.size > 2
         puts ""
 	puts "Copyright (c) 2008 Gabriel Medina/Rha7.Com."
+	puts "Released under the LGPL license."
 	puts ""
         puts ""
         puts "USAGE:"
